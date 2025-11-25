@@ -12,6 +12,10 @@ class SimpleCalculator:
         return a - b
 
     def mul(self, *args):
+        # # Added line as requested
+        if not args:
+            raise ValueError("No numbers provided")
+
         if not all(args):
             raise ValueError
         return reduce(operator.mul, args)
